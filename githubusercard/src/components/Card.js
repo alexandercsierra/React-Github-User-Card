@@ -11,10 +11,11 @@ const CardDiv = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
 `;
 
 const ACard = styled(Card)`
-  width: 20%;
+  width: 30%;
 `;
 
 
@@ -25,10 +26,10 @@ const TheCard = (props) => {
       <ACard>
         <CardImg top width="100%" src={user.avatar_url} alt="Card image cap" />
         <CardBody>
-          <CardTitle>{user.name}</CardTitle>
-          <CardSubtitle>{user.login}</CardSubtitle>
-          <CardText>{user.bio}</CardText>
-          <a href={user.url} target="_blank"><Button>Button</Button></a>
+          <CardTitle style={{fontSize: "1.5rem"}}>{user.name}</CardTitle>
+          <CardSubtitle>username: {user.login}</CardSubtitle>
+          <CardText style={{fontSize: ".9rem", background: "#e3e3e3", padding: "3%", borderRadius: "5px", margin:"4% auto"}}>{user.bio}</CardText>
+          <a href={user.url} target="_blank"><Button>Go to profile</Button></a>
         </CardBody>
       </ACard>
     </CardDiv>

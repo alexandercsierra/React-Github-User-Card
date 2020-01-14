@@ -4,19 +4,21 @@ import './App.css';
 import { render } from '@testing-library/react';
 import axios from 'axios'
 import Card from './components/Card'
+import Followers from './components/Followers'
 
 class App extends React.Component {
   constructor(){
     super();
     this.state={
-      user: {
-        login: "alexandercsierra",
-        name: "Alex Sierra",
-        avatar: "https://avatars3.githubusercontent.com/u/26785156?s=400&u=a809604c8a7843c7707b4cce73d3790325ea435c&v=4",
-        bio: "Learning Full Stack Development one line at a time at Lambda School",
-        location: "Maine, USA",
-        url: "https://github.com/alexandercsierra"
-      },
+      // user: {
+      //   login: "alexandercsierra",
+      //   name: "Alex Sierra",
+      //   avatar: "https://avatars3.githubusercontent.com/u/26785156?s=400&u=a809604c8a7843c7707b4cce73d3790325ea435c&v=4",
+      //   bio: "Learning Full Stack Development one line at a time at Lambda School",
+      //   location: "Maine, USA",
+      //   url: "https://github.com/alexandercsierra"
+      // },
+      user: {},
       followers: []
     }    
   }
@@ -31,14 +33,14 @@ class App extends React.Component {
   //   url: "https://github.com/alexandercsierra"
   // }
 
-  // componentDidMount(){
-  //   axios.get("https://api.github.com/users/alexandercsierra")
-  //     .then(res => this.setState({user: res.data}))
-  //     .catch(err => console.log(err))
-  //   axios.get("https://api.github.com/users/alexandercsierra/followers")
-  //     .then(res => this.setState({followers: res}))
-  //     .catch(err => console.log(err))
-  // }
+  componentDidMount(){
+    axios.get("https://api.github.com/users/alexandercsierra")
+      .then(res => this.setState({user: res.data}))
+      .catch(err => console.log(err))
+    axios.get("https://api.github.com/users/alexandercsierra/followers")
+      .then(res => this.setState({followers: res.data}))
+      .catch(err => console.log(err))
+  }
 
 // username: this.state.user.login
 // name: this.state.user.name
@@ -53,8 +55,10 @@ class App extends React.Component {
     console.log(this.state);
     return (
       <div className="App">
-        Stuff
+        <h1>GitHub User Cards</h1>
         <Card user={this.state.user}/>
+          {this.state.followers && <Followers followers={this.state.followers}/>}
+        
       </div>
     );
   }
