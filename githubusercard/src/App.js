@@ -9,11 +9,27 @@ class App extends React.Component {
   constructor(){
     super();
     this.state={
-      user: {},
+      user: {
+        login: "alexandercsierra",
+        name: "Alex Sierra",
+        avatar: "https://avatars3.githubusercontent.com/u/26785156?s=400&u=a809604c8a7843c7707b4cce73d3790325ea435c&v=4",
+        bio: "Learning Full Stack Development one line at a time at Lambda School",
+        location: "Maine, USA",
+        url: "https://github.com/alexandercsierra"
+      },
       followers: []
     }    
   }
 
+
+  // {
+  //   login: "alexandercsierra",
+  //   name: "Alex Sierra",
+  //   avatar: "https://avatars3.githubusercontent.com/u/26785156?s=400&u=a809604c8a7843c7707b4cce73d3790325ea435c&v=4",
+  //   bio: "Learning Full Stack Development one line at a time at Lambda School",
+  //   location: "Maine, USA",
+  //   url: "https://github.com/alexandercsierra"
+  // }
 
   // componentDidMount(){
   //   axios.get("https://api.github.com/users/alexandercsierra")
@@ -38,7 +54,7 @@ class App extends React.Component {
     return (
       <div className="App">
         Stuff
-        <Card/>
+        <Card user={this.state.user}/>
       </div>
     );
   }
