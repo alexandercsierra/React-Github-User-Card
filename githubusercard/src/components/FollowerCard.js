@@ -11,7 +11,7 @@ const CardDiv = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
+//   border: 1px solid red;
   width: 25%;
   margin: 4%;
 `;
