@@ -8,12 +8,12 @@ import ReactCardFlip from 'react-card-flip';
 
 const CardDiv = styled.div`
   // width: 80%;
-  height: 600px;
+  height: 800px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  // margin: 5% auto;
 `;
 
 const ACard = styled(Card)`

@@ -6,6 +6,7 @@ import axios from 'axios'
 import Card from './components/Card'
 import Followers from './components/Followers'
 import FlipCard from './components/FlipCard'
+import Calendar from './components/Calendar'
 
 class App extends React.Component {
   constructor(){
@@ -50,8 +51,8 @@ class App extends React.Component {
       <div className="App">
         <h1>GitHub User Cards</h1>
         <Card user={this.state.user}/>
-          {this.state.followers && <Followers followers={this.state.followers}/>}
-        <FlipCard/>
+        <Calendar style={{width: "90%"}}name="alexandercsierra"/>
+        {this.state.followers && <Followers followers={this.state.followers}/>}
       </div>
     );
   }
